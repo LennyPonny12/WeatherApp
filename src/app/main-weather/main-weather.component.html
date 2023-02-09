@@ -1,16 +1,26 @@
 <div class="content">
   <div class="singleContainer">
-    <span> Country Code: </span>
+    <span class="info"> Country Code: </span>
     <span class="singleContainer__ccText">
       {{ mainWeather.countryCode }}
     </span>
   </div>
-  <div class="singleContainer">
-    <span> City Name: </span>
+  <div class="singleContainer mainContianer">
+    <span class="info"> City Name: </span>
     <span class="singleContainer__cnText">
       {{ mainWeather.cityName }}
     </span>
   </div>
-  <span>{{ mainWeather.temperature }}</span>
-  <span>{{ mainWeather.feelsLike }}</span>
+  <div class="singleContainer">
+    <span class="info"> Temperature: </span>
+    <span class="singleContainer__tText">
+      {{ mainWeather.cityName }}
+    </span>
+  </div>
+  <div class="singleContainer">
+    <span class="info"> Feels Like Temperature: </span>
+    <span class="singleContainer__fltText">
+      {{ mainWeather.cityName }}
+    </span>
+  </div>
 </div>

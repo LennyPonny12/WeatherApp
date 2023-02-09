@@ -1,6 +1,6 @@
 .content{
   background-color: #ccd5ae;
-  min-height: 35rem;
+  min-height: 40rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -15,12 +15,26 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  letter-spacing: 1px;
 
   &__ccText{
     font-size: 2rem;
   }
 
   &__cnText{
-    font-size: 4rem;
+    font-size: 5rem;
   }
+
+  &__tText, &__fltText{
+    font-size: 2.5rem;
+  }
+}
+
+.mainContianer{
+  gap: 0;
+  padding: 1rem 0;
+}
+
+.info{
+  opacity: 0.8;
 }

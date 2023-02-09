@@ -6,7 +6,7 @@ import { Weather } from './weather';
 })
 export class WeatherServiceService {
   private weathers: Weather[] = [
-    { cityName: 'London', countryCode: '0', feelsLike: 30, temperature: 29 },
+    { cityName: 'London', countryCode: 'EN', feelsLike: 30, temperature: 29 },
     { cityName: 'London', countryCode: '1', feelsLike: 30, temperature: 29 },
     { cityName: 'London', countryCode: '2', feelsLike: 30, temperature: 29 },
     { cityName: 'London', countryCode: '3', feelsLike: 30, temperature: 29 },

@@ -1,7 +1,10 @@
 <main class="main">
   <app-main-weather></app-main-weather>
-  <app-side-weather
-    *ngFor="let weather of weathers | slice : 1 : 4; let i = index"
-    [index]="i + 1"
-  ></app-side-weather>
+  <div class="sideContainer">
+    <app-side-weather
+      class="sideWeather"
+      *ngFor="let weather of weathers | slice : 1 : 4; let i = index"
+      [index]="i + 1"
+    ></app-side-weather>
+  </div>
 </main>

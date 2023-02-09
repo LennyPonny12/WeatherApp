@@ -1,3 +1,11 @@
 .main{
-  width: 50%;
+  width: 40%;
+}
+.sideWeather{
+  width: 33%;
+}
+.sideContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
