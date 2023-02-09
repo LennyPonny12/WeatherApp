@@ -1,0 +1,25 @@
+.inputContainer{
+  margin-top: 1rem;
+  position: relative;
+  background-color: #fff;
+}
+
+.input{
+  width: 95%;
+  outline: none;
+  border: none;
+  padding: 1rem;
+}
+
+.icon{
+  position: absolute;
+  height: 2rem;
+  stroke: #000;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+
+  &:hover{
+    cursor: pointer;
+  }
+}
