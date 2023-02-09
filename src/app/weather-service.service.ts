@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Weather } from './weather';
 
 @Injectable({
@@ -7,12 +9,12 @@ import { Weather } from './weather';
 export class WeatherServiceService {
   private weathers: Weather[] = [
     { cityName: 'London', countryCode: 'EN', feelsLike: 30, temperature: 29 },
-    { cityName: 'London', countryCode: '1', feelsLike: 30, temperature: 29 },
-    { cityName: 'London', countryCode: '2', feelsLike: 30, temperature: 29 },
-    { cityName: 'London', countryCode: '3', feelsLike: 30, temperature: 29 },
+    { cityName: 'Paris', countryCode: 'FR', feelsLike: 30, temperature: 29 },
+    { cityName: 'Tokyo', countryCode: 'JP', feelsLike: 30, temperature: 29 },
+    { cityName: 'New York', countryCode: 'US', feelsLike: 30, temperature: 29 },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getArrayOfWeathers() {
     return this.weathers;
@@ -20,5 +22,11 @@ export class WeatherServiceService {
 
   getSingleWeather(id: number) {
     return this.weathers[id];
+  }
+
+  getWeather(cityName: string) {
+    return this.http.get(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=9cebb9d79b4e171e9d1341c2113e1970`
+    );
   }
 }
