@@ -1,0 +1,26 @@
+.content{
+  background-color: #ccd5ae;
+  min-height: 35rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+  color: #fff
+}
+
+.singleContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  &__ccText{
+    font-size: 2rem;
+  }
+
+  &__cnText{
+    font-size: 4rem;
+  }
+}
