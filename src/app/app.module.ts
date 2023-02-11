@@ -7,10 +7,11 @@ import { SideWeatherComponent } from './side-weather/side-weather.component';
 import { MainWeatherComponent } from './main-weather/main-weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InputComponent } from './input/input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, SideWeatherComponent, MainWeatherComponent, InputComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" (click)="changeWeatherSub()">
   <div class="singleContainer">
     <span class="info"> Country Code: </span>
     <span class="singleContainer__ccText">
@@ -14,13 +14,13 @@
   <div class="singleContainer">
     <span class="info"> Temperature: </span>
     <span class="singleContainer__tText">
-      {{ weather.cityName }}
+      {{ weather.temperature }}
     </span>
   </div>
   <div class="singleContainer">
     <span class="info"> Feels Like Temperature: </span>
     <span class="singleContainer__fltText">
-      {{ weather.cityName }}
+      {{ weather.feelsLike }}
     </span>
   </div>
 </div>

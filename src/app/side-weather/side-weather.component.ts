@@ -16,4 +16,9 @@ export class SideWeatherComponent implements OnInit {
   ngOnInit(): void {
     this.weather = this.weatherService.getSingleWeather(this.index);
   }
+
+  changeWeatherSub(){
+    this.weatherService.idToChange.next(this.index);
+    this.weatherService.isActive.next(true)
+  }
 }

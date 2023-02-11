@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Weather } from './weather';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherServiceService {
+  isActive = new Subject<boolean>();
+  idToChange = new Subject<number>();
+  newArray = new Subject<Weather[]>();
+
   private weathers: Weather[] = [
     { cityName: 'London', countryCode: 'EN', feelsLike: 30, temperature: 29 },
     { cityName: 'Paris', countryCode: 'FR', feelsLike: 30, temperature: 29 },
@@ -14,7 +18,11 @@ export class WeatherServiceService {
     { cityName: 'New York', countryCode: 'US', feelsLike: 30, temperature: 29 },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.newArray.subscribe((arr) => {
+      this.weathers = arr;
+    })
+  }
 
   getArrayOfWeathers() {
     return this.weathers;

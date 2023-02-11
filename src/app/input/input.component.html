@@ -1,10 +1,11 @@
-<div class="inputContainer">
-  <input type="text" class="input" placeholder="City name..." />
+<div class="inputContainer" *ngIf="active">
+  <input [(ngModel)]="cityName" type="text" class="input" placeholder="City name..." />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     class="icon"
+    (click)="changeCity()"
   >
     <path
       stroke-linecap="round"
