@@ -11,7 +11,8 @@ import { WeatherServiceService } from '../weather-service.service';
 export class InputComponent implements OnInit{
   active:boolean = false;
   idToChange:number;
-  cityName:string
+  cityName:string;
+  wrongCity:boolean = false
 
   constructor(private weatherService:WeatherServiceService,private http:HttpClient){}
 
@@ -26,25 +27,28 @@ export class InputComponent implements OnInit{
 
   changeCity(){
     this.weatherService.getWeather(this.cityName).subscribe((data:Array<any>)=> {
-      let nameOfCity = data[0].name
+      this.wrongCity = false
       if(data.length > 0){
+        let nameOfCity = data[0].name;
         this.http
         .get<any>(
           `https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&appid=9cebb9d79b4e171e9d1341c2113e1970&units=metric&lang=en`
-        ).subscribe(dataOfCity => {
-          let newWeather:Weather = {
-            cityName: nameOfCity,
-            countryCode: dataOfCity.sys.country,
-            feelsLike: dataOfCity.main.feels_like,
-            temperature: dataOfCity.main.temp
-          }
-          let newWeatherArray = this.weatherService.getArrayOfWeathers().slice()
-          newWeatherArray[this.idToChange] = newWeather
-          this.weatherService.newArray.next(newWeatherArray)
-        })
-      }else{
-
-      }
-    })
-  }
+          ).subscribe(dataOfCity => {
+            let newWeather:Weather = {
+              cityName: nameOfCity,
+              countryCode: dataOfCity.sys.country,
+              feelsLike: dataOfCity.main.feels_like,
+              temperature: dataOfCity.main.temp
+            }
+            let newWeatherArray = this.weatherService.getArrayOfWeathers().slice()
+            newWeatherArray[this.idToChange] = newWeather
+            this.weatherService.newArray.next(newWeatherArray)
+          })
+          this.active = false
+        }else{
+          this.wrongCity = true
+        }
+      })
+      this.cityName = ''
+    }
 }

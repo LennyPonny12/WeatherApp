@@ -1,17 +1,17 @@
-.inputContainer{
+.inputContainer {
   margin-top: 1rem;
   position: relative;
   background-color: #fff;
 }
 
-.input{
+.input {
   width: 95%;
   outline: none;
   border: none;
   padding: 1rem;
 }
 
-.icon{
+.icon {
   position: absolute;
   height: 2rem;
   stroke: #000;
@@ -19,7 +19,14 @@
   right: 1rem;
   transform: translateY(-50%);
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+}
+
+.warning {
+  text-align: center;
+  color: rgb(170, 46, 46);
+  font-size: 2rem;
+  margin-top: 1rem;
 }

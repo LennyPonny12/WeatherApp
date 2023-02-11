@@ -14,7 +14,6 @@ export class AppComponent {
     this.weathers = weatherSerivce.getArrayOfWeathers();
     weatherSerivce.newArray.subscribe((data) => {
       this.weathers = data
-      console.log(this.weathers)
     })
   }
 }
