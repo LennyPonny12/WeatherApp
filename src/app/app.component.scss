@@ -1,0 +1,24 @@
+.main {
+  width: 40%;
+}
+.sideWeather {
+  width: 33%;
+}
+.sideContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+//1050
+@media (max-width: 66em) {
+  .main {
+    width: 60%;
+  }
+}
+
+@media (max-width: 44em) {
+  .main {
+    width: 80%;
+  }
+}

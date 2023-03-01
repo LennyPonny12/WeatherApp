@@ -1,0 +1,19 @@
+<div class="inputContainer" *ngIf="active">
+  <input [(ngModel)]="cityName" type="text" class="input" placeholder="City name..." (keydown.enter)="changeCity()"/>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="icon"
+    (click)="changeCity()"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M12 4.5v15m7.5-7.5h-15"
+    />
+  </svg>
+</div>
+<div class="warning" *ngIf="active && wrongCity">
+  City does not exist!
+</div>

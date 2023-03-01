@@ -1,0 +1,26 @@
+<div class="content" (click)="changeWeatherSub()">
+  <div class="singleContainer">
+    <span class="info"> Country Code: </span>
+    <span class="singleContainer__ccText">
+      {{ weather.countryCode }}
+    </span>
+  </div>
+  <div class="singleContainer mainContianer">
+    <span class="info"> City Name: </span>
+    <span class="singleContainer__cnText">
+      {{ weather.cityName }}
+    </span>
+  </div>
+  <div class="singleContainer">
+    <span class="info"> Temperature: </span>
+    <span class="singleContainer__tText">
+      {{ weather.temperature }}
+    </span>
+  </div>
+  <div class="singleContainer">
+    <span class="info"> Feels Like Temperature: </span>
+    <span class="singleContainer__fltText">
+      {{ weather.feelsLike }}
+    </span>
+  </div>
+</div>
